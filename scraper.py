@@ -5,7 +5,7 @@ import random
 import pandas
 
 pandas.set_option('display.max_columns', None)
-url = "https://muckrack.com/beat/food?page={}"
+url = "CLIENT URL/food?page={}"
 journalists_arr = []
 
 def high_level():
@@ -19,7 +19,7 @@ def high_level():
         for i in range(len(person_names)):
             person = person_names[i]
             person_text = person.find("a").text
-            person_url = 'https://muckrack.com' + person.find("a").get('href')
+            person_url = 'ROOT URL' + person.find("a").get('href')
             person_array = [person_text, person_url, "N/a", "N/a", "N/a"]
             write_to_csv(person_array)
 
